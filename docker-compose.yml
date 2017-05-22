@@ -4,8 +4,9 @@ services:
 
   micro-comments:
     build: .
-    tty: true
-    command: bash
+    #tty: true
+    #command: bash
+    command: python -u ./app/app.py
     ports:
       - "5000:5000"
     volumes:
