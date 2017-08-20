@@ -27,7 +27,6 @@ class UnauthorizedTestCase(unittest.TestCase):
         JwtTokenAuthentication.authorized = self.authorized
 
 
-
 class AuthorizedTestCase(unittest.TestCase):
     """
     Authorization method returns authorized 200
