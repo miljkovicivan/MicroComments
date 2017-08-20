@@ -27,3 +27,5 @@ docs/_build
 supervisord.log
 *.pid
 .idea
+
+tmp-docker-vol/
