@@ -2,7 +2,12 @@ version: '2'
 
 services:
 
-  comments:
+  mongodb:
+    image: mongo:3.0
+    volumes:
+     - ./tmp-docker-vol/mongodb:/data/db
+
+  micro-comments:
     build: .
     #tty: true
     #command: bash
@@ -15,10 +20,3 @@ services:
       - mongodb
     environment:
       - ENV=local
-
-  mongodb:
-    image: mongo:3.4.4
-    volumes:
-     - ./tmp-docker-vol/mongodb:/data/db
-
-
