@@ -21,8 +21,6 @@ if ENV == 'ci':
     APP.config.from_pyfile('configs/circleci.conf')
 elif ENV == 'production':
     APP.config.from_pyfile('configs/production.conf')
-elif ENV == 'staging':
-    APP.config.from_pyfile('configs/staging.conf')
 else:
     APP.config.from_pyfile('configs/local.conf')
 
