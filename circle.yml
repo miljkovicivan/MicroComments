@@ -1,10 +1,13 @@
-dependencies:
-    pre:
-        - pip install flake8
+machine:
+  environment:
+    ENV: ci
+
+  python:
+    version: 3.6.1
+  services:
+  - docker
+  - mongod
 
 test:
-    pre:
-        - flake8 ./
-    override:
-        - pyenv global 2.7.11 3.5.1
-        - tox
+  override:
+    - python ./app/tests.py
