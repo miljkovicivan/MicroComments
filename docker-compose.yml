@@ -2,20 +2,22 @@ version: '2'
 
 services:
 
-  micro-comments:
+  comments:
     build: .
     #tty: true
     #command: bash
-    command: python -u ./app/app.py
+    command: ./docker/run.sh
     ports:
       - "5000:5000"
     volumes:
       - .:/app
     links:
       - mongodb
+    environment:
+      - ENV=local
 
   mongodb:
-    image: mongo:latest
+    image: mongo:3.4.4
     volumes:
      - ./tmp-docker-vol/mongodb:/data/db
 
