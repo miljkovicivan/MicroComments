@@ -17,14 +17,20 @@ DB.init_app(APP)
 
 class UnauthorizedTestCase(unittest.TestCase):
     """
-    Regular authorization
+    Authorization method returns unauthorized 401
     """
-    pass
+    def setUp(self):
+        self.authorized = JwtTokenAuthentication.authorized
+        JwtTokenAuthentication.authorized = MagicMock(return_value=False)
+
+    def tearDown(self):
+        JwtTokenAuthentication.authorized = self.authorized
+
 
 
 class AuthorizedTestCase(unittest.TestCase):
     """
-    Mocked authorization
+    Authorization method returns authorized 200
     """
 
     def setUp(self):
