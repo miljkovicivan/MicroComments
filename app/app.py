@@ -56,3 +56,4 @@ class CommentView(views.ResourceView):
         comment.save()
         ret['last_modified'] = comment.last_modified
         return ret
+
