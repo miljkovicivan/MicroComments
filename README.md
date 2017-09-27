@@ -7,4 +7,4 @@ Comments micro service.
 
 `docker-compose up -d`
 
-Server should be visible at `localhost:5000`
+Server should be visible at `localhost:1000`
